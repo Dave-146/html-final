@@ -1,0 +1,498 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/******************************************************
+                    Defaults   
+******************************************************/
+
+/*
+The maximum width of the container is 1200px
+Add media query for the screen size of 760px and above
+Use the 'Open Sans' Google font for the webpage
+Colours values used in the layout #c78c06, #ffe6ac, #222 and white
+*/
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    color:black;
+}
+
+a{
+    text-decoration:none;
+}
+
+h1{
+    font-size:3rem;
+    font-weight:700;
+    line-height:1.6;
+    margin-bottom:1rem;
+}
+
+h2{
+    font-size:2rem;
+    font-weight:700;
+    margin:2.5rem 0 1rem;
+}
+
+h3{
+    font-size:1.4rem;
+    font-weight:700;
+    margin:1.5rem 0 1rem;
+}
+
+.fullbreak{    
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    height:100%;
+    width:100%;
+    background-position:center center;
+    background-size:cover;
+}
+
+p{
+    line-height:1.4;
+}
+
+.calltoaction{
+    background-color:#222;
+    color:white;
+    padding:1.5rem;
+    display:inline-block;
+    margin-top:10px;    
+}
+
+.calltoaction i.icon{
+    padding-left:10px;
+}
+
+button{
+    cursor:pointer;
+}
+
+
+/******************************************************
+                    Nav   
+******************************************************/
+
+nav{
+    padding: 10px;
+    position:relative;
+}
+
+.navback{
+    background-color:#222;
+}
+
+.logo{
+    background-color:#c78c06;
+}
+
+nav ul a{
+    display:block;
+    padding:1rem;
+    color:#c78c06;
+    text-align:center; 
+}
+
+nav a.current, nav a:active{
+    background-color:#c78c06;
+    color:#222;
+}
+
+
+nav form{
+    display:flex;
+}
+
+nav form input{
+    flex-grow:1;
+    padding:4px 2px;
+}
+
+nav form button{
+    border:1px solid #c78c06;
+    color:#c78c06;
+    background-color:#222;
+    height:100%;
+}
+
+
+/******************************************************
+                    Header   
+******************************************************/
+
+header{
+    position:relative;
+    padding:3rem 0;
+    color:white;
+}
+
+.headerback{
+    background-image:url("../images/main-banner.jpg");
+}
+
+.headercontent{
+    background-color:rgba(0,0,0,0.6);
+    padding:2rem 10px 10px;
+}
+
+header a.calltoaction{
+    color:#222;
+    background-color:#c78c06;
+}
+
+/******************************************************
+                Main - About  
+******************************************************/
+
+#about{
+    padding:10px;
+    position:relative;
+}
+
+#about h2{
+    margin-top:1.5rem;
+}
+
+.aboutback{
+    background-color:#ffe6ac;
+}
+
+#about img{
+    width:100%;
+}
+
+#about p{
+    margin-bottom:1em;
+}
+
+/******************************************************
+                Main - Services  
+******************************************************/
+
+#services{
+    padding:0 10px;
+}
+
+#services section{
+    margin-bottom:10px;
+    background-color:#ffe6ac;
+}
+
+#services section img{
+    width:100%;
+}
+
+#services section div{
+    padding:0 10px 10px;
+}
+
+/******************************************************
+                Main - Vision  
+******************************************************/
+.vision{
+    position:relative;
+    padding:10px;
+    color:white;
+}
+
+.visionback{
+    background-image:url("../images/vision.jpg");
+}
+
+.vision h3{
+    color:white;
+}
+
+.vision .calltoaction{
+    border:1px solid #c78c06;
+}
+
+/******************************************************
+                Main - Team  
+******************************************************/
+#team{
+    padding:0 10px;
+}
+
+#team section{
+    background-color:#ffe6ac;
+    margin-bottom:10px;
+}
+
+#team img{
+    width:100%;
+}
+
+#team section div{
+    padding:10px;
+}
+
+#team h3{
+    margin:10px 0 5px;
+}
+
+#team h4{
+    font-weight:700;
+    border-bottom:2px solid #c78c06;
+    line-height:1.4;
+}
+
+#team p{
+    margin:10px 0;
+}
+
+
+/******************************************************
+                Main - Contact  
+******************************************************/
+#contact{
+    padding:10px;
+}
+
+#contact label{
+    display:block;
+    line-height:1.4;
+    margin-top:10px;
+}
+
+#contact input, #contact textarea{
+    box-sizing:border-box;
+    display:block;
+    width:100%;
+}
+
+#contact textarea{
+    height:8em;
+    margin-bottom:1rem;
+}
+
+#contact button{
+    font-size:1rem;
+    background-color:#222;
+    color:#c78c06;
+    border:none;
+    padding:5px;
+}
+
+table{
+    width:100%;
+    box-sizing:border-box;
+}
+
+th, td{
+    border:1px solid black;
+    padding:1rem;
+}
+
+th{
+    background-color:#ffe6ac;
+}
+
+th:first-child{
+    width:60%;
+}
+
+#contact iframe{
+    width:100%;
+    height:400px;
+}
+
+
+/******************************************************
+                    Footer  
+******************************************************/
+
+footer{
+    font-size:0.8rem;
+    position:relative;
+    padding:10px;
+}
+
+.footerback{
+    background-color:#222;
+}
+
+footer p{
+    margin-top:10px;
+    color:#c78c06;
+}
+
+footer a{
+    text-decoration:underline;
+    color:#c78c06;
+}
+
+/******************************************************
+                    Media Queries   
+******************************************************/
+
+@media screen and (min-width:760px){
+    /* ~~~~~~~~~~~~~~~~ Defaults ~~~~~~~~~~~~~~~~*/
+    body{
+        font-size:16px;
+    }
+    
+    .container{
+        width:85%;
+        margin:0 auto;
+        max-width:1200px;
+    }
+
+    .fullbreak{
+        width:100vw;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+    }
+
+
+    /* ~~~~~~~~~~~~~~~~ Nav ~~~~~~~~~~~~~~~~*/
+    nav{
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+    }
+
+    nav ul{
+        flex-grow:1;
+        max-width:600px;
+        display:flex;
+        flex-wrap:nowrap;
+        justify-content:space-around;
+    }
+
+    nav input{
+        width:130px;
+    }
+
+    nav a:hover{
+        background-color:#c78c06;
+        color:#222;
+    }
+
+
+    /* ~~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~~*/
+    h1{ font-size:4rem; }
+    h2{ font-size:2.5rem; }
+    h3{ font-size:1.7rem; }
+
+    /* ~~~~~~~~~~~~~~~~ About ~~~~~~~~~~~~~~~~*/
+    #about{
+        display:grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    #about h2{
+        margin-top:0.5rem;
+    }
+
+    #about div{
+        padding-left:10px;
+    }
+
+    /* ~~~~~~~~~~~~~~~~ Services ~~~~~~~~~~~~~~~~*/
+    #services{
+        display:grid;
+        grid-template-columns:repeat(6, 1fr);
+        grid-template-areas:
+            "H H H H H H"
+            "D D D M M M"
+            "V V W W P P";
+        column-gap:10px;
+        margin-bottom:1rem;
+    }
+
+    #services h2{ grid-area: H; }
+    .digital{ grid-area: D; }
+    .marketing{ grid-area: M; }
+    .videop{ grid-area: V; }
+    .webp{ grid-area: W; }
+    .printp{ grid-area: P; }
+
+
+    /* ~~~~~~~~~~~~~~~~ Team ~~~~~~~~~~~~~~~~*/
+    #team section{
+        display:flex;
+    }
+
+    #team section:first-of-type{
+        margin-bottom:0;
+    }
+
+    #team section:last-of-type{
+        flex-direction:row-reverse;
+    }
+
+    #team img{
+        width:50%;
+    }
+
+
+    /* ~~~~~~~~~~~~~~~~ Contact ~~~~~~~~~~~~~~~~*/
+    #contact{
+        display:grid;
+        grid-template-columns:repeat(6, 1fr);
+        grid-template-areas:
+            "H H H H H H"
+            "F F F M M M"
+            "O O O O O O";
+        column-gap:10px;
+        margin-bottom:1rem;
+    }
+
+    #contact h2{ grid-area: H; }
+    .contactus{ grid-area: F; }
+    .location{ grid-area: M; }
+    .hours{ grid-area: O; }
+}
