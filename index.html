@@ -4,16 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--
+         the next three links connect to google fonts and link to the Open Sans font on google fonts
+         two font weights are used: 400 (regular) and 700 (bold)
+     -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"> 
+    <!-- the following css file is for the icon font (using Fico)-->
     <link href="styles/icons.css" rel="stylesheet">
+    <!-- this is the main CSS file -->
     <link href="styles/styles.css" rel="stylesheet">
     <title>Three Star Media</title>
 </head>
 <body>
+    <!-- using a container to hold the entire site -->
     <div class="container">
+
         <nav id="home">
+            <!-- each div with the class "fullbreak" holds a full-width background -->
             <div class="navback fullbreak"></div>
             <div class="logo">
                 <img src="images/logo.png" alt="Three Star Logo">
@@ -25,9 +34,10 @@
                 <li><a href="#team">Team</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- all forms require both an action (where the data will be sent) and a method (how the data will be sent) -->
             <form action="search.php" method="post">
                 <input type="text" name="searchbar" id="searchbar" placeholder="Search">
-                <label for="searchbar"><button type="submit"><i class="icon icon-zoom"></i></button></label>
+                <button type="submit"><i class="icon icon-zoom"></i></button>
             </form>
         </nav>
         <header>
@@ -41,6 +51,8 @@
         <main>
             <article id="about">
                 <div class="aboutback fullbreak"></div>
+                <!-- the content is in a separate div as it all needs to sit next to the image 
+                    (at the desktop size) -->
                 <img src="images/about-us.jpg" alt="ping-pong table">
                 <div>
                     <h2>About Us</h2>

@@ -52,17 +52,23 @@ table {
 ******************************************************/
 
 /*
-The maximum width of the container is 1200px
-Add media query for the screen size of 760px and above
-Use the 'Open Sans' Google font for the webpage
-Colours values used in the layout #c78c06, #ffe6ac, #222 and white
+Default settings including:
+    font-family
+    color
+    (each of these are inherited from the html element)
+    font-size
+    (used for REM values and also inherited from the html)
 */
 
-body{
+html{
     font-family: 'Open Sans', sans-serif;
     font-size: 14px;
     color:black;
 }
+
+/*
+Default styling for repeated elements, such as links, headers, etc.
+*/
 
 a{
     text-decoration:none;
@@ -87,19 +93,12 @@ h3{
     margin:1.5rem 0 1rem;
 }
 
-.fullbreak{    
-    position:absolute;
-    top:0;
-    left:0;
-    z-index:-1;
-    height:100%;
-    width:100%;
-    background-position:center center;
-    background-size:cover;
-}
-
 p{
     line-height:1.4;
+}
+
+button{
+    cursor:pointer;
 }
 
 .calltoaction{
@@ -114,8 +113,18 @@ p{
     padding-left:10px;
 }
 
-button{
-    cursor:pointer;
+/*
+this sets up the 100% width banner/background for any element with the class fullbreak
+*/
+.fullbreak{    
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:-1;
+    height:100%;
+    width:100%;
+    background-position:center center;
+    background-size:cover;
 }
 
 
@@ -123,6 +132,9 @@ button{
                     Nav   
 ******************************************************/
 
+/*
+The nav is set to position relative so it will hold the position absolute full-width background inside it
+*/
 nav{
     padding: 10px;
     position:relative;
@@ -148,7 +160,9 @@ nav a.current, nav a:active{
     color:#222;
 }
 
-
+/*
+ Display flex is great for making things sit beside each other, like the search bar and search button
+*/
 nav form{
     display:flex;
 }
@@ -162,7 +176,6 @@ nav form button{
     border:1px solid #c78c06;
     color:#c78c06;
     background-color:#222;
-    height:100%;
 }
 
 
@@ -305,12 +318,22 @@ header a.calltoaction{
     margin-top:10px;
 }
 
+/*
+Box-sizing:border-box is used here as form fields have default padding and borders
+setting a form field to 100% means its with is 100% + the padding + the border
+but using border-box means the padding and border are included within the 100% width
+*/
 #contact input, #contact textarea{
     box-sizing:border-box;
     display:block;
     width:100%;
 }
 
+/*
+The height of the textarea is set using em, meaning relative to the textarea's font size
+The margin is set using rem, meaning relative to the root font size (the HTML element)
+If the font size of the textarea changes, its height will respond, but the margin will not change
+*/
 #contact textarea{
     height:8em;
     margin-bottom:1rem;
@@ -382,12 +405,21 @@ footer a{
         font-size:16px;
     }
     
+    /*
+    A maximum width is used in combination with the 85% width, so that at sizes smaller than 1200px,
+    the site will still appear to have bleeding backgrounds (full-width banners)
+    Margin:0 auto; centres the site in the browser window after it reaches its maximum width
+    */
     .container{
         width:85%;
         margin:0 auto;
         max-width:1200px;
     }
 
+    /*
+    The larger version of the full width banners requires some extra code to make sure they stay
+    centred in the browser window along with the site
+    */
     .fullbreak{
         width:100vw;
         left: 50%;
@@ -398,6 +430,12 @@ footer a{
 
 
     /* ~~~~~~~~~~~~~~~~ Nav ~~~~~~~~~~~~~~~~*/
+    /*
+    Flexbox can be used inside another flexbox - in this case, the whole nav is set to flex, making
+    the logo, navigation menu, and search sit next to each other.
+    Then the ul is set to flex, making each of the navigation items sit next to each other.
+    (The search bar/button are also still set to flex from the mobile styles.)
+    */
     nav{
         display:flex;
         align-items:center;
@@ -423,11 +461,16 @@ footer a{
 
 
     /* ~~~~~~~~~~~~~~~~ Header ~~~~~~~~~~~~~~~~*/
+    /* minor changes to the font sizes */
     h1{ font-size:4rem; }
     h2{ font-size:2.5rem; }
     h3{ font-size:1.7rem; }
 
     /* ~~~~~~~~~~~~~~~~ About ~~~~~~~~~~~~~~~~*/
+    /*
+    Putting two objects next to each other (the image and the content) can be accomplished using float,
+    flex, or grid. In this case, as they are two evenly spaced areas, grid seemed the best solution
+    */
     #about{
         display:grid;
         grid-template-columns:1fr 1fr;
@@ -442,6 +485,11 @@ footer a{
     }
 
     /* ~~~~~~~~~~~~~~~~ Services ~~~~~~~~~~~~~~~~*/
+    /*
+    Creating this grid setup - two objects followed by three objects - can be done a number of ways,
+    including using column start/end values, grid-area, or a grid map (as I've used below).
+    A six-column grid is best, since both 2 and 3 divide into 6.
+    */
     #services{
         display:grid;
         grid-template-columns:repeat(6, 1fr);
@@ -453,6 +501,7 @@ footer a{
         margin-bottom:1rem;
     }
 
+    /* mapping each of the areas in the service section to the grid map above */
     #services h2{ grid-area: H; }
     .digital{ grid-area: D; }
     .marketing{ grid-area: M; }
@@ -466,10 +515,17 @@ footer a{
         display:flex;
     }
 
+    /*
+    The margin on the below section overrides the margin set from the mobile sizes (so the two sections
+    in the Team article will be touching each other).
+    */
     #team section:first-of-type{
         margin-bottom:0;
     }
 
+    /*
+    Display:flex was used here to reverse the order of the second row - using row-reverse
+    */
     #team section:last-of-type{
         flex-direction:row-reverse;
     }
@@ -480,6 +536,12 @@ footer a{
 
 
     /* ~~~~~~~~~~~~~~~~ Contact ~~~~~~~~~~~~~~~~*/
+    /*
+    In this case, the grid map seemed the quickest way to change the order of the elements in the contact
+    section (the form, map, and table).
+    However, the same could be accomplished without the map using column start/end properties and
+    the order property.
+    */
     #contact{
         display:grid;
         grid-template-columns:repeat(6, 1fr);
