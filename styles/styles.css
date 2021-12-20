@@ -418,7 +418,19 @@ footer a{
 
     /*
     The larger version of the full width banners requires some extra code to make sure they stay
-    centred in the browser window along with the site
+    centred in the browser window along with the site.
+
+    Now, here's the funny thing: 100vw does not take account the width of a vertical scrollbar.
+    Meaning that with this solution, the site will have about 10px of horizontal wiggle room.
+    Most people won't notice this, but it does mean that this isn't a perfect solution to
+    the full-width banner problem.
+
+    It is possible to shut scroll bars off, using overflow-x:hidden; on the body, but that means
+    if the user zooms in they won't be able to scroll horizontally, which isn't a solution at all.
+
+    It is also possible to use a javascript and/or SASS solution which would take into account
+    the width of the scrollbar and set the width of these banners accordingly, though even these
+    solutions aren't always perfect. 
     */
     .fullbreak{
         width:100vw;
@@ -480,7 +492,7 @@ footer a{
         margin-top:0.5rem;
     }
 
-    #about div{
+    #about div:last-of-type{
         padding-left:10px;
     }
 
